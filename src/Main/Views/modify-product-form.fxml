@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="1141.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifyProductController">
+   <children>
+      <AnchorPane layoutX="29.0" layoutY="54.0" prefHeight="573.0" prefWidth="1086.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+         <children>
+            <Label layoutX="85.0" layoutY="47.0" text="Modify Product">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="122.0" text="ID" />
+            <TextField fx:id="modifyProductIDTextBox" disable="true" editable="false" layoutX="176.0" layoutY="118.0" />
+            <Label layoutX="110.0" layoutY="182.0" text="Name" />
+            <TextField fx:id="modifyProductNameTextBox" layoutX="176.0" layoutY="178.0" />
+            <Label layoutX="110.0" layoutY="245.0" text="Inv" />
+            <TextField fx:id="modifyProductInvTextBox" layoutX="176.0" layoutY="241.0" prefHeight="25.0" prefWidth="100.0" />
+            <Label layoutX="110.0" layoutY="307.0" text="Price" />
+            <TextField fx:id="modifyProductPriceTextBox" layoutX="176.0" layoutY="303.0" prefHeight="25.0" prefWidth="100.0" />
+            <Label layoutX="113.0" layoutY="365.0" text="Max" />
+            <TextField fx:id="modifyProductMaxTextBox" layoutX="176.0" layoutY="361.0" prefHeight="25.0" prefWidth="100.0" />
+            <Label layoutX="325.0" layoutY="365.0" text="Min" />
+            <TextField fx:id="modifyProductMinTextBox" layoutX="386.0" layoutY="361.0" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="modifyProductSearchBar" layoutX="898.0" layoutY="14.0" onKeyTyped="#modifyProductSearch" promptText="Search by Part ID or Name " />
+            <TableView fx:id="modifyProductTopTable" layoutX="653.0" layoutY="55.0" prefHeight="176.0" prefWidth="403.0">
+              <columns>
+                <TableColumn fx:id="modProductGenPartID" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="modProductGenPartName" prefWidth="91.0" text="Part Name" />
+                  <TableColumn fx:id="modProductGenInv" prefWidth="107.0" text="Inventory Level" />
+                  <TableColumn fx:id="modProductGenPrice" prefWidth="129.0" text="Price/Cost per Unit" />
+              </columns>
+            </TableView>
+            <TableView fx:id="modifyProductBottomTable" layoutX="653.0" layoutY="286.0" prefHeight="176.0" prefWidth="403.0">
+               <columns>
+                  <TableColumn fx:id="modProductAssocPartID" prefWidth="75.0" text="Part ID" />
+                  <TableColumn fx:id="modProductAssocPartName" prefWidth="91.0" text="Part Name" />
+                  <TableColumn fx:id="modProductAssocInv" prefWidth="107.0" text="Inventory Level" />
+                  <TableColumn fx:id="modProductAssocPrice" prefWidth="129.0" text="Price/Cost per Unit" />
+               </columns>
+            </TableView>
+            <Button fx:id="modifyProductAddButton" layoutX="972.0" layoutY="245.0" mnemonicParsing="false" onAction="#modifyProductAdd" text="Add" />
+            <Button fx:id="modifyProductRemoveButton" layoutX="900.0" layoutY="479.0" mnemonicParsing="false" onAction="#modifyProductRemove" text="Remove Associated Part" />
+            <Button fx:id="modifyProductSaveButton" layoutX="898.0" layoutY="522.0" mnemonicParsing="false" onAction="#modifyProductSave" text="Save" />
+            <Button fx:id="modifyProductCancelButton" layoutX="991.0" layoutY="522.0" mnemonicParsing="false" onAction="#modifyProductCancel" text="Cancel" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
